@@ -4,8 +4,14 @@ export default function Textform(props) {
   const [text, setText] = useState("Enter text here");
   //   setText("Hilal ahmad is MERN Stack developer");
 
-  const onHandleUpClick = () => {
-    setText("You clicked on convert to uppercase");
+  const convertToUpperCase = () => {
+    let newText = text.toUpperCase();
+    setText(newText);
+  };
+
+  const convertToLowerCase = () => {
+    let newText = text.toLowerCase();
+    setText(newText);
   };
 
   const onTextChange = (event) => {
@@ -25,8 +31,11 @@ export default function Textform(props) {
           onChange={onTextChange}
         ></textarea>
       </div>
-      <button className="btn btn-primary" onClick={onHandleUpClick}>
+      <button className="btn btn-primary me-2" onClick={convertToUpperCase}>
         Convert to Uppercase
+      </button>
+      <button className="btn btn-primary " onClick={convertToLowerCase}>
+        Convert to Lowercase
       </button>
     </div>
   );
