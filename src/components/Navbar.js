@@ -39,7 +39,7 @@ export default function Navbar(props) {
               aria-label="Search"
             />
             <button className="btn btn-outline-success" type="submit">
-              Search
+              Search here
             </button>
           </form>
         </div>
