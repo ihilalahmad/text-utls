@@ -36,14 +36,19 @@ export default function Textform(props) {
   return (
     <>
       <div className="container">
+        <h2 className={`text-${props.mode == "light" ? "dark" : "light"}`}>
+          {props.heading}
+        </h2>
         <div className="mb-3">
-          <h2>{props.heading}</h2>
           <textarea
             className="form-control mt-3"
             value={text}
             id="myTextBox"
             rows="8"
             onChange={onTextChange}
+            style={{
+              backgroundColor: props.mode == "light" ? "red" : "green",
+            }}
           ></textarea>
         </div>
         <button className="btn btn-primary me-2" onClick={convertToUpperCase}>
@@ -63,13 +68,21 @@ export default function Textform(props) {
         </button>
       </div>
       <div className="contianer mt-5">
-        <h2>Your text summary:</h2>
-        <p>
+        <h2 className={`text-${props.mode == "light" ? "dark" : "light"}`}>
+          Your text summary:
+        </h2>
+        <p className={`text-${props.mode == "light" ? "dark" : "light"}`}>
           {text.split(" ").length - 1} words and {text.length} characters
         </p>
-        <p>{0.008 * text.split(" ").length} minutes read</p>
-        <h2>Preview</h2>
-        <p>{text}</p>
+        <p className={`text-${props.mode == "light" ? "dark" : "light"}`}>
+          {0.008 * text.split(" ").length} minutes read
+        </p>
+        <h2 className={`text-${props.mode == "light" ? "dark" : "light"}`}>
+          Preview
+        </h2>
+        <p className={`text-${props.mode == "light" ? "dark" : "light"}`}>
+          {text}
+        </p>
       </div>
     </>
   );
