@@ -21,6 +21,7 @@ export default function Textform(props) {
 
   const copyText = () => {
     navigator.clipboard.writeText(text);
+    props.showAlert("Text copied from textfield", "success");
   };
 
   const removeExtraSpaces = () => {
